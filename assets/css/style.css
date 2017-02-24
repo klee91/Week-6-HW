@@ -1,0 +1,73 @@
+* {
+	font-family: 'Roboto' , sans-serif;
+}
+
+body {
+	background-color: #141518;
+}
+
+.header {
+	background-image: url("../images/escheresque.png");
+	background-color: #639c84;
+	
+	
+}
+
+.bar {
+	background-color: #34373C;
+	width: 100%;
+	height: 25px;
+}
+
+h1 {
+	font-family: 'Baloo' , cursive;
+	font-size: 500%;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: #FFF;
+	text-shadow: 4px 4px 2px #252525;
+	color: #C7EEC3;
+}
+
+#musicButtons {
+	margin-top: 10px;
+}
+
+button {
+	background-color: #FFF;
+	border-radius: 7px;
+	padding: 5px;
+	margin: 5px;
+}
+
+.new-artist {
+	opacity:1;
+    -webkit-transition: opacity .25s ease;
+	
+}
+
+.new-artist:hover {
+	
+	background-color: #C7EEC3;
+	box-shadow: 1px 1px 2px #FFF;
+}
+
+form {
+	margin: 20px 10px 10px 10px;
+}
+
+label {
+	color: #FFF;
+}
+
+#musicInput {
+	margin-left: 4px;
+}
+
+#addArtist {
+	margin: 10px;
+}
+
+.new-gif {
+	float:left;
+	margin: 0px 10px 0px 10px;
+}
