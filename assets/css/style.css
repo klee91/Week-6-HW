@@ -52,12 +52,15 @@ button {
 }
 
 form {
-	margin: 20px 10px 10px 10px;
+	margin: 0 auto;
+	text-align: middle;
+	width: 400px;
 }
 
 label {
 	color: #FFF;
 }
+
 
 #musicInput {
 	margin-left: 4px;
@@ -68,6 +71,12 @@ label {
 }
 
 .new-gif {
-	float:left;
-	margin: 0px 10px 0px 10px;
+	text-align: center;
+	padding: 5px;
+	line-height: ;
+}
+
+#gif-view {
+	display: flex;
+	flex-flow: row wrap;
 }

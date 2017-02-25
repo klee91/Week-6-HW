@@ -1,15 +1,13 @@
+//topic terms for initialization
 var topics = ["Drake","Rihanna", "Adele", "Katy Perry", "Bruno Mars", "Chance the Rapper", 
 			  "Lady Gaga", "Usher", "Justin Timberlake", "Yuna", "John Mayer", "Iamsu!", 
 			  "Sam Smith", "Beyonce", "Justin Bieber"];
 
 //button rendering function
-function renderButtons(searchTerm) {
+function renderButtons() {
 	for (var i =0;i < topics.length ; i++) {
 		artistBtn = $("<button>");
 		artistBtn.addClass("new-artist").attr("data-artist", topics[i].split(/[ ,]+/).join('+')).text(topics[i]);
-		
-		artistBtn.attr("data-artist", searchTerm);
-		
 		artistBtn.appendTo("#musicButtons");
 	}
 }
@@ -30,12 +28,14 @@ function displayArtistGifs(searchArtist) {
 	}).done(function(response) {
 		$('#gif-view').empty();
 
+		//dynamic function of creating/displaying gifs onto page
 		for (var i = 0; i < response.data.length ; i++) {
-			var artistGif = $("<div>");
+			var artistGif = $("<div style='color:white;'>");
 			artistGif.addClass("new-gif");
 			artistGif.html("Rating : " + response.data[i].rating + "<br><img class='a' src=" + response.data[i].images.fixed_height_still.url + ">");
 			artistGif.attr('still-gif', response.data[i].images.fixed_height_still.url);
 			artistGif.attr('play-gif', response.data[i].images.fixed_height.url);
+
 			artistGif.appendTo('#gif-view');
 		}
 	});
@@ -44,6 +44,7 @@ function displayArtistGifs(searchArtist) {
 // click function for artist button
 $(document).on("click", ".new-artist", obtainArtist);
 
+// click condition/function for playing and pausing gif(s)
 $(document).on("click", ".a", function() {
 	
 	var clicks = $(this).data('clicks');
@@ -65,11 +66,11 @@ $('#addArtist').on('click', function(event) {
 	//declaration of artist here
 	var userArtist = $('#musicInput').val().trim();
 	topics.push(userArtist);
-	searchTerm = $('#musicInput').val().trim().split(/[ ,]+/).join('+');
 
 	$("#musicButtons").empty();
-	renderButtons(searchTerm);
+	renderButtons();
 
 });
 
+//rendering initial buttons
 renderButtons();
